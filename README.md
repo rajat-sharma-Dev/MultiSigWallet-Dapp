@@ -1,12 +1,39 @@
-# React + Vite
+# 🧾 MultiSig Wallet DApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A decentralized multi-signature wallet built with Solidity and React, allowing multiple owners to securely manage shared funds. Inspired by Gnosis Safe, this DApp ensures that no single party can move assets unilaterally — transactions require confirmation from a minimum number of designated owners.
 
-Currently, two official plugins are available:
+Tri it now :- > https://multi-sig-wallet-dapp.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## 🌐 Overview
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This MultiSig Wallet allows users to:
+- Deploy shared wallets via a factory contract
+- Set custom confirmation thresholds
+- Propose, approve, and execute transactions collaboratively
+- Discover wallets linked to their addresses
+
+The smart contracts are written in Solidity, and the frontend is built using React, Vite, and Ethers.js.
+
+## 🛠️ Tech Stack
+
+- **Smart Contracts**: Solidity, Hardhat
+- **Frontend**: React.js, Vite, Ethers.js
+- **Wallet Integration**: MetaMask
+- **Frameworks/Tools**: Hardhat, Ethers, JavaScript
+
+## ✨ Features
+
+- 🔨 **Factory Contract**: Create new MultiSig wallets dynamically using `MultiSigWalletFactory`.
+- 👥 **Multiple Owners**: Deploy wallets with 1 to N owners.
+- ✅ **Custom Confirmation Thresholds**: Define how many confirmations are required to execute a transaction.
+- 🔎 **Wallet Discovery**: View all deployed MultiSig wallets associated with your address.
+- 🔐 **Secure Execution**: Transactions are only executed when the required number of approvals is met.
+- 📦 **Modular Design**: Easy to extend for use in DAO treasury or shared custody use cases.
+
+## 🧪 How It Works
+
+1. **Deploy Wallet**: Use the frontend or interact with `MultiSigWalletFactory` to deploy a wallet.
+2. **Submit Transaction**: One of the owners can submit a transaction proposal.
+3. **Confirm Transaction**: Other owners confirm the transaction.
+4. **Execute Transaction**: Once enough confirmations are collected, the transaction can be executed.
